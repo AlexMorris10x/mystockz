@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 black = "*"
+autopep8 = "*"
 
 [packages]
 flask = "*"
@@ -13,9 +14,7 @@ flask-login = "*"
 python-dotenv = "*"
 gunicorn = "*"
 requests = "*"
-urlparse = "*"
 datetime = "*"
-dictutil = "*"
 
 [requires]
 python_version = "3.7"

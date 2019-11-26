@@ -3,8 +3,8 @@ import datetime
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
 from flask_login import current_user, login_required
 
-from finance_app.extensions import db
-from finance_app.models import Stocks, User
+from flask_qa.extensions import db
+from flask_qa.models import Stocks, User
 
 
 main = Blueprint("main", __name__)
@@ -49,10 +49,12 @@ def index():
         .all()
     )
 
-    currentCash = db.session.query(User).filter(User.name == current_user.name).all()
+    currentCash = db.session.query(User).filter(
+        User.name == current_user.name).all()
 
     totalStocks = (
-        db.session.query(db.func.sum(Stocks.shares * Stocks.price).label("totalStocks"))
+        db.session.query(db.func.sum(
+            Stocks.shares * Stocks.price).label("totalStocks"))
         .filter(Stocks.name == current_user.name)
         .all()
     )
