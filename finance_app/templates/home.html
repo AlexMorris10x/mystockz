@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {%block content %}
+<h1>Your Portfolio</h1>
+<table style="width:100%">
+  <tr>
+    <!-- <th>Symbol</th> -->
+    <th>Stock</th>
+    <th>Shares</th>
+    <th>Price</th>
+    <th>TOTAL</th>
+  </tr>
+  {% for stock in userStocks %}
+  <tr>
+    <!-- <td>{{stock.symbol}}</td> -->
+    <td>{{stock.share}}</td>
+    <td>{{stock.shares}}</td>
+    <td>{{stock.price}}</td>
+    <td>{{stock.shares*stock.price}}</td>
+  </tr>
+  {% endfor %} {% for cash in currentCash %}
+  <tr>
+    <td>Cash</td>
+    <!-- <td></td> -->
+    <td></td>
+    <td></td>
+    <td>{{cash.cash}}</td>
+  </tr>
+  {% endfor %} {% for total in totalStocks %}
+  <tr>
+    <td>Total</td>
+    <!-- <td></td> -->
+    <td></td>
+    <td></td>
+    <td>{{ total.totalStocks }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<h1>Your Stock History</h1>
+<table style="width:100%">
+    <tr>
+        <th>Stock</th>
+        <th>Shares</th>
+        <th>Time</th>
+    </tr>
+    {% for stock in userStocks %}
+    <tr>
+        <td>{{stock.share}}</td>
+        <td>{{stock.shares}}</td>
+        <td>{{stock.time}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</ul>
+{% endblock %}

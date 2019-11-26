@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %} Quote {% endblock %} {% block main
+%}
+<h1>LOOKUP STOCKS</h1>
+<form action="/quote" method="post">
+  <div class="form-group">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control"
+      name="symbol"
+      placeholder="Symbol"
+      type="text"
+    />
+    <h8>Please Use Stock Symbol</h8>
+  </div>
+  <button class="btn btn-primary" type="submit">Quote</button>
+</form>
+{% endblock %}

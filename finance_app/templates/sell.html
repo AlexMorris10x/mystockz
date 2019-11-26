@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+<h1>Sell Your Stocks</h1>
+
+    <form action="/sell" method="post">
+        <div class="form-group">
+            <div>
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+            </div>
+            <div>
+            <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Shares" type="text">
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
