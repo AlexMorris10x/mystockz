@@ -46,17 +46,15 @@ def index():
         .filter(Stocks.name == current_user.name)
         .group_by(Stocks.share)
         .order_by(Stocks.share)
-        .all()
     )
 
     currentCash = db.session.query(User).filter(
-        User.name == current_user.name).all()
+        User.name == current_user.name)
 
     totalStocks = (
         db.session.query(db.func.sum(
             Stocks.shares * Stocks.price).label("totalStocks"))
         .filter(Stocks.name == current_user.name)
-        .all()
     )
     return render_template(
         "home.html",
@@ -161,6 +159,5 @@ def history():
     userStocks = (
         db.session.query(Stocks.share, Stocks.shares, Stocks.time)
         .filter(Stocks.name == current_user.name)
-        .all()
     )
     return render_template("history.html", userStocks=userStocks)
