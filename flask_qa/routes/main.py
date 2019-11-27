@@ -49,19 +49,20 @@ def index():
         # .values(db.func.sum(Stocks.shares).label("shares"))
     )
 
-    # currentCash = db.session.query(User).filter(
-    #     User.name == current_user.name)
+    currentCash = db.session.query(User).filter(
+        User.name == current_user.name)
 
-    # totalStocks = (
-    #     db.session.query(db.func.sum(
-    #         Stocks.shares * Stocks.price).label("totalStocks"))
-    #     .filter(Stocks.name == current_user.name)
-    # )
+    totalStocks = (
+        db.session.query(db.func.sum(
+            Stocks.shares * Stocks.price).label("totalStocks"))
+        .filter(Stocks.name == current_user.name)
+    )
+
     return render_template(
         "home.html",
         userStocks=userStocks,
-        # currentCash=currentCash,
-        # totalStocks=totalStocks,
+        currentCash=currentCash,
+        totalStocks=totalStocks,
     )
 
 
