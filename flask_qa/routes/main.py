@@ -42,10 +42,11 @@ def index():
             Stocks.price,
             db.func.sum(Stocks.shares).label("shares"))
         .group_by(Stocks.share)
+        .group_by(Stocks.shares)
+        .group_by(Stocks.price)
         .filter(Stocks.name == current_user.name)
         .order_by(Stocks.share)
         .all()
-        # .values(db.func.sum(Stocks.shares).label("shares"))
     )
 
     # currentCash = db.session.query(User).filter(
