@@ -47,20 +47,20 @@ def index():
         .all()
     )
 
-    currentCash = db.session.query(User).filter(
-        User.name == current_user.name).all()
+    # currentCash = db.session.query(User).filter(
+    #     User.name == current_user.name).all()
 
-    totalStocks = (
-        db.session.query(Stocks.shares, Stocks.price, db.func.sum(
-            Stocks.shares * Stocks.price).label("totalStocks"))
-        .filter(Stocks.name == current_user.name).all()
-    )
+    # totalStocks = (
+    #     db.session.query(Stocks.shares, Stocks.price, db.func.sum(
+    #         Stocks.shares * Stocks.price).label("totalStocks"))
+    #     .filter(Stocks.name == current_user.name).all()
+    # )
 
     return render_template(
         "home.html",
         userStocks=userStocks,
-        currentCash=currentCash,
-        totalStocks=totalStocks,
+        # currentCash=currentCash,
+        # totalStocks=totalStocks,
     )
 
 
