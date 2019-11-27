@@ -39,7 +39,6 @@ def index():
     userStocks = (
         db.session.query(
             Stocks.share,
-            Stocks.shares,
             Stocks.price,
             db.func.sum(Stocks.shares).label("shares"))
         .group_by(Stocks.share)
