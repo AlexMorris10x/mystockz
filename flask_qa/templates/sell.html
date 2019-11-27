@@ -1,21 +1,30 @@
-{% extends 'base.html' %}
-
-{% block title %}
-    Sell
-{% endblock %}
-
-{% block main %}
+{% extends 'base.html' %} {% block title %} Sell {% endblock %} {% block main %}
 <h1>Sell Your Stocks</h1>
+<h8>Please Use Stock Symbol</h8>
 
-    <form action="/sell" method="post">
-        <div class="form-group">
-            <div>
-            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
-            </div>
-            <div>
-            <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Shares" type="text">
-            </div>
-        </div>
-        <button class="btn btn-primary" type="submit">Sell</button>
-    </form>
+<form action="/sell" method="post">
+  <div class="form-group">
+    <div>
+      <input
+        autocomplete="off"
+        autofocus
+        class="form-control"
+        name="symbol"
+        placeholder="Symbol"
+        type="text"
+      />
+    </div>
+    <div>
+      <input
+        autocomplete="off"
+        autofocus
+        class="form-control"
+        name="shares"
+        placeholder="Shares"
+        type="text"
+      />
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Sell</button>
+</form>
 {% endblock %}
