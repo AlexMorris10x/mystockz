@@ -13,8 +13,8 @@
     <!-- <td>{{stock.symbol}}</td> -->
     <td>{{stock.share}}</td>
     <td>{{stock.shares}}</td>
-    <!-- <td>{{stock.price}}</td>
-    <td>{{stock.shares*stock.price}}</td> -->
+    <td>{{stock.price}}</td>
+    <td>{{stock.shares*stock.price}}</td>
   </tr>
   {% endfor %} {% for cash in currentCash %}
   <tr>
@@ -22,7 +22,7 @@
     <!-- <td></td> -->
     <td></td>
     <td></td>
-    <td>{{cash.cash}}</td>
+    <!-- <td>{{cash.cash}}</td> -->
   </tr>
   {% endfor %} {% for total in totalStocks %}
   <tr>
@@ -30,7 +30,7 @@
     <!-- <td></td> -->
     <td></td>
     <td></td>
-    <td>{{ total.totalStocks }}</td>
+    <!-- <td>{{ total.totalStocks }}</td> -->
   </tr>
   {% endfor %}
 </table>
