@@ -45,7 +45,7 @@ def index():
         # .group_by(Stocks.price)
         .filter(Stocks.name == current_user.name)
         .order_by(Stocks.share)
-        .group_by(Stocks.share)
+        .group_by(Stocks.share, Stocks.price)
         .all()
     )
 
