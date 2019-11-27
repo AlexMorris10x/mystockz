@@ -46,6 +46,11 @@ def index():
         .group_by(Stocks.share, Stocks.price)
         .all()
     )
+    cash = User.query.filter_by(id=current_user.id).first()
+    flash("You currnetly have")
+    flash("$")
+    flash(cash.cash)
+    flash("in your digital wallet.")
 
     # currentCash = db.session.query(User).filter(
     #     User.name == current_user.name).all()
@@ -106,7 +111,6 @@ def buy():
 
             update = User.query.filter_by(id=current_user.id).first()
             update.cash = newCash
-            flash(update.cash)
             db.session.commit()
         else:
             flash("Not enough funds")
